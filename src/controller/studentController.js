@@ -20,23 +20,27 @@ export const findStudent = (req, res) => {
 }
 
 export const deleteStudent = (req, res) => {
-    //TODO delete student
+    repo.deleteStudent(+req.params.id);
+    res.status(204).send();
 }
 
 export const updateStudent = (req, res) => {
-    //TODO update student
+    repo.updateStudent(+req.params.id, req.body.name, req.body.password);
+    res.status(204).send();
 }
 
 export const addScore = (req, res) => {
-    //Todo add score
+
 }
 
 export const findStudentsByName = (req, res) => {
-    //todo find student by name
+    const students = repo.findStudentsByName(req.query.name);
+    res.json(Array.from(students));
 }
 
 export const countByNames = (req, res) => {
-    //todo count by names
+    const students = repo.findStudentsByName(req.query.name);
+    res.json(Array.from(students).length);
 }
 
 export const findByMinScore = (req, res) => {

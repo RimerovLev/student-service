@@ -11,3 +11,15 @@ export const addStudent = ({id, name, password}) =>{
 }
 
 export const findStudent = (id) => students.get(id);
+
+export const deleteStudent = (id) => students.delete(id);
+
+export const updateStudent = (id, name, password) => students.get(id).name = name;
+
+export const addScore = (id, subject, score) => students.get(id).scores[subject] = score;
+
+export const findStudentsByName = (name) => students.values();
+
+export const countByNames = () => {};
+
+export const findByMinScore = () => {};
