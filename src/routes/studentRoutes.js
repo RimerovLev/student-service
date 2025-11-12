@@ -7,7 +7,7 @@ import {
     addScore,
     findStudentsByName,
     countByNames,
-    findByMinScore,
+    findByMinScore, countByNamesController,
 } from "../controller/studentController.js";
 
 const router = Router();
@@ -23,7 +23,7 @@ router.patch("/score/student/:id", addScore);
 
 // Search and aggregates
 router.get("/students/name/:name", findStudentsByName);
-router.get("/quantity/students", countByNames); // expects query params: names=Peter&names=John
+router.get("/quantity/students", countByNamesController); // expects query params: names=Peter&names=John
 router.get("/students/exam/:exam/minscore/:minScore", findByMinScore);
 
 export default router;
