@@ -30,7 +30,8 @@ export const updateStudent = (req, res) => {
 }
 
 export const addScore = (req, res) => {
-
+    const score = req.body;
+    repo.addScore(+req.params.id, score);
 }
 
 export const findStudentsByName = (req, res) => {

@@ -3,7 +3,7 @@ import express from "express";
 import studentRouter from './routes/studentRoutes.js';
 
 dotenv.config();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const app = express();
 
 app.use(express.json());
